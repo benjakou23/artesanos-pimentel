@@ -15,7 +15,7 @@
 }
 
 .slide {
-    min-width: 100%; /* Cada slide ocupa el 100% del ancho del contenedor */
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho del contenedor (CLAVE RESPONSIVA) */
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -178,6 +178,10 @@
     .slider-control {
         padding: 10px 5px;
         font-size: 1.2em;
+    }
+    /* CLAVE ADICIONAL para asegurar que las imágenes de fondo se vean bien */
+    .slide {
+        background-attachment: scroll; /* Previene problemas de fixed background en móvil */
     }
 
     /* --- FEATURE CARDS --- */

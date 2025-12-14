@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Función para mover el slider
     function updateSlider() {
+        // Usa porcentaje, lo cual es responsive
         const offset = -currentIndex * 100;
         sliderWrapper.style.transform = `translateX(${offset}%)`;
     }
