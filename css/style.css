@@ -1,4 +1,4 @@
-/* Variables de Color (Usando tonos de tierra y mar de Pimentel) */
+/* Variables de Color y Tipografía */
 :root {
     --primary-color: #8B4513; /* Marrón Sepia/Tierra */
     --secondary-color: #FFC300; /* Amarillo Sol/Arena */
@@ -7,6 +7,11 @@
     --light-bg: #F9F9F9;
     --white: #FFFFFF;
     --font-family: 'Montserrat', sans-serif;
+    
+    /* Pesos de Montserrat */
+    --font-semi: 600; 
+    --font-bold: 700; 
+    --font-extra: 900; 
 }
 
 /* Base y Reset */
@@ -16,9 +21,11 @@ body {
     padding: 0;
     background-color: var(--light-bg);
     color: var(--text-color);
+    line-height: 1.6;
 }
-h1, h2, h3 {
-    font-weight: 700;
+h1, h2, h3, .logo {
+    font-family: var(--font-family);
+    font-weight: var(--font-bold);
 }
 .container {
     width: 90%;
@@ -34,7 +41,7 @@ a {
 .btn {
     padding: 12px 25px;
     border-radius: 5px;
-    font-weight: 700;
+    font-weight: var(--font-semi);
     text-transform: uppercase;
     transition: all 0.3s;
     display: inline-block;
@@ -77,12 +84,12 @@ a {
 }
 .logo {
     font-size: 1.8em;
-    font-weight: 900;
+    font-weight: var(--font-extra);
     color: var(--primary-color);
 }
 .main-nav a {
     margin-left: 25px;
-    font-weight: 400;
+    font-weight: var(--font-semi);
     color: var(--text-color);
     position: relative;
 }
@@ -94,36 +101,19 @@ a {
     color: var(--primary-color) !important;
 }
 
-/* Hero Slider (Simple Estilo Visual) */
-.hero-slider {
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-}
-.slide {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-}
-.overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10%;
-    color: var(--white);
-}
-.overlay h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+/* --- ESTILOS PARA EL BOTÓN DE HAMBURGUESA (Por defecto: Oculto) --- */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    z-index: 1001;
 }
 
-/* Feature Cards (Valores) */
+/* Feature Cards */
 .features {
     display: flex;
     justify-content: space-around;
@@ -143,7 +133,7 @@ a {
     margin-bottom: 15px;
 }
 
-/* Product Grid y Cards Modernas */
+/* Product Grid */
 .product-grid-section {
     padding: 50px 0;
 }
@@ -178,6 +168,7 @@ a {
     padding: 15px;
 }
 .card-info h3 {
+    font-weight: var(--font-bold);
     font-size: 1.4em;
     margin: 0 0 5px 0;
 }
@@ -189,7 +180,7 @@ a {
 .card-info .price {
     font-size: 1.6em;
     color: var(--accent-color);
-    font-weight: 900;
+    font-weight: var(--font-extra);
     margin: 10px 0 15px 0;
 }
 
@@ -218,99 +209,23 @@ a {
     background-color: var(--light-bg);
 }
 
-/* Footer (Simplificado) */
-.main-footer {
-    background-color: #333;
-    color: var(--white);
-    text-align: center;
-    padding: 30px 0;
-}
-/* ... Añadir más estilos para las páginas Artesanos, Cultura, Contacto ... */
-
-/* Variables de Color y Tipografía */
-:root {
-    --primary-color: #8B4513; /* Marrón Sepia/Tierra */
-    --secondary-color: #FFC300; /* Amarillo Sol/Arena */
-    --accent-color: #1E90FF; /* Azul Marino/Océano */
-    --text-color: #333;
-    --light-bg: #F9F9F9;
-    --white: #FFFFFF;
-    --font-family: 'Montserrat', sans-serif;
-    
-    /* Pesos de Montserrat */
-    --font-semi: 600; /* Semi-Negrita */
-    --font-bold: 700; /* Negrita */
-    --font-extra: 900; /* Extra-Negrita */
-}
-
-/* Base y Reset */
-body {
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    background-color: var(--light-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-h1, h2, h3, .logo {
-    font-family: var(--font-family);
-    font-weight: var(--font-bold); /* Títulos en Negrita */
-}
-.container {
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-/* Botones y Elementos Interactivos */
-.btn {
-    /* ... (Mantener estilos anteriores) ... */
-    font-weight: var(--font-semi); /* Texto de botón en Semi-Negrita */
-}
-
-/* Header (Asegurando la jerarquía tipográfica) */
-/* ... (Mantener estilos del header anterior) ... */
-.logo {
-    font-size: 1.8em;
-    font-weight: var(--font-extra); /* Logo más llamativo */
-    color: var(--primary-color);
-}
-.main-nav a {
-    font-weight: var(--font-semi); /* Links en Semi-Negrita */
-}
-
-/* Tarjetas de Producto Modernas */
-/* ... (Mantener estilos de product-card anterior) ... */
-.card-info h3 {
-    font-weight: var(--font-bold);
-}
-.card-info .price {
-    font-weight: var(--font-extra);
-}
-.add-to-cart i {
-    margin-right: 5px; /* Espacio para el ícono */
-}
-
-/* NUEVA SECCIÓN DE FOOTER (Diseño y Estructura) */
+/* Footer */
 .main-footer {
     background-color: #333;
     color: var(--white);
     padding: 40px 0;
     font-size: 0.9em;
 }
-
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
 }
-
 .footer-section {
     flex: 1;
     min-width: 200px;
 }
-
 .footer-section h4 {
     color: var(--secondary-color);
     font-weight: var(--font-semi);
@@ -318,29 +233,24 @@ h1, h2, h3, .logo {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 5px;
 }
-
 .footer-section ul {
     list-style: none;
     padding: 0;
 }
-
 .footer-section a {
     color: #ccc;
     display: block;
     margin-bottom: 8px;
     transition: color 0.3s;
 }
-
 .footer-section a:hover {
     color: var(--secondary-color);
 }
-
 .social-icons a {
     font-size: 1.5em;
     margin-right: 15px;
     color: var(--white);
 }
-
 .footer-bottom {
     text-align: center;
     border-top: 1px solid #555;
@@ -348,53 +258,77 @@ h1, h2, h3, .logo {
     margin-top: 30px;
 }
 
-/* Dentro de css/style.css, añade al final: */
+/* ======================================= */
+/* === AJUSTES RESPONSIVE PARA MÓVILES === */
+/* ======================================= */
 
-/* --- Media Query: Pantallas Pequeñas (ej. hasta 768px) --- */
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px; /* Añadir padding lateral para no pegar el contenido */
+        padding: 0 15px;
+    }
+    
+    /* HEADER Y MENÚ HAMBURGUESA */
+    .main-header .container {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        /* Aseguramos que el logo y el botón estén alineados */
     }
 
-    /* 1. HEADER Y NAVEGACIÓN */
-    .main-header .container {
-        flex-direction: column; /* Apilar logo y nav */
-        align-items: center;
+    .menu-toggle {
+        display: block; /* Mostrar el botón de hamburguesa */
+        position: relative; 
     }
-    .logo {
-        margin-bottom: 15px;
-    }
+    
     .main-nav {
-        flex-direction: column; /* Los enlaces se apilan verticalmente */
-        text-align: center;
+        /* OCULTAR EL MENÚ Y PREPARARLO PARA EL DESPLIEGUE */
+        display: none; 
+        position: absolute;
+        top: 65px; 
+        left: 0;
         width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 999;
     }
+    
+    /* Mostrar la navegación cuando tenga la clase 'active' */
+    .main-nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
     .main-nav a {
-        padding: 8px 0;
+        margin: 0;
+        padding: 15px 0;
         border-bottom: 1px solid #eee;
     }
+    
     .main-nav a:last-child {
         border-bottom: none;
     }
 
-    /* 2. BOTONES */
-    .btn {
-        padding: 12px 20px;
-        font-size: 0.95em;
+    /* FEATURE CARDS */
+    .features {
+        flex-direction: column; 
+        padding: 40px 15px;
+        gap: 20px;
+    }
+    
+    /* PRODUCT GRID */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 20px;
     }
 
-    /* 3. FOOTER */
-    .main-footer .footer-content {
-        grid-template-columns: 1fr; /* Una sola columna */
-        gap: 30px;
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
         text-align: center;
     }
     .footer-section h4 {
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 5px;
-        display: inline-block; /* Centrar el título */
-    }
-    .footer-section ul {
-        padding: 0;
+        display: inline-block;
     }
 }
