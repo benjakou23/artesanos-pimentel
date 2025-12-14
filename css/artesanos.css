@@ -1,5 +1,8 @@
 /* artesanos.css - Estilos específicos de la página de Artesanos */
 
+/* Variables de Color y Tipografía (Generalmente importadas desde style.css o definidas aquí si no hay style.css) */
+/* Asumiendo que style.css ya tiene las variables, no las repito */
+
 /* --- Encabezado de Página --- */
 .page-hero {
     padding: 60px 0;
@@ -127,4 +130,3 @@
         height: 300px; /* Reducir altura de la imagen apilada */
     }
 }
-

@@ -17,10 +17,12 @@
             <div class="logo">
                 <i class="fas fa-hand-holding-heart"></i> Pimentel Artesanal
             </div>
-            <nav class="main-nav">
-                <a href="index.html">Inicio</a>
-                <a href="#productos">Tienda</a>
-                <a href="artesanos.html">Artesanos</a>
+            
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="main-nav"> <a href="index.html">Inicio</a>
+                <a href="tienda.html">Tienda</a> <a href="artesanos.html">Artesanos</a>
                 <a href="cultura.html">Cultura</a>
                 <a href="contacto.html">Contacto</a>
                 <a href="carrito.html" id="cart-link" class="cart-icon">
@@ -130,11 +132,6 @@
         </div>
     </footer>
 
-    <script src="js/app.js"></script> <script>
-        // Lógica para que el contador del carrito se actualice al cargar la página
-        if (typeof updateCartCount === 'function') {
-            updateCartCount();
-        }
-    </script>
+    <script src="js/app.js"></script> 
 </body>
 </html>

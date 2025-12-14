@@ -157,20 +157,9 @@
     .contact-form-container, .contact-info-container {
         padding: 20px;
     }
-}
-
-/* Dentro de css/contacto.css, debes revisar la Media Query existente: */
-
-@media (max-width: 900px) {
-    /* Clave: Forzar apilamiento */
-    .contact-grid {
-        grid-template-columns: 1fr; /* Pasa a una columna */
-        gap: 40px;
-    }
-    .contact-form-container, .contact-info-container {
-        padding: 20px;
-    }
-    .info-item {
+    
+    /* Mejoras para la visualización móvil de info-item (opcional) */
+     .info-item {
         flex-direction: column; /* Apilar ícono y texto */
         text-align: center;
     }
