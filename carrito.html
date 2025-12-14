@@ -17,7 +17,12 @@
             <div class="logo">
                 <i class="fas fa-hand-holding-heart"></i> Pimentel Artesanal
             </div>
-            <nav class="main-nav">
+            
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="main-nav" id="main-nav">
                 <a href="index.html">Inicio</a>
                 <a href="#productos">Tienda</a>
                 <a href="artesanos.html">Artesanos</a>
@@ -108,5 +113,75 @@
         </div>
     </footer>
 
-    <script src="js/app.js"></script> <script src="js/carrito.js"></script> </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ==============================================
+            // === 1. LÓGICA DEL MENÚ DE HAMBURGUESA ===
+            // ==============================================
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            if (menuToggle && mainNav) {
+                // Manejador para abrir/cerrar el menú
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    
+                    // Opcional: Cambiar el ícono de la hamburguesa a una 'X'
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times'); // Usar fa-times para cerrar (X)
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Opcional: Cerrar el menú al hacer clic en un enlace (en móvil)
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Solo si el menú está activo (móvil)
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            // Restaurar el ícono de hamburguesa
+                            const icon = menuToggle.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // ==============================================
+            // === 2. LÓGICA DEL CONTADOR DEL CARRITO (GLOBAL) ===
+            // ==============================================
+            // NOTA: Para que esto funcione, la lógica completa de Carrito (como la que estaba en js/carrito.js) 
+            // debería estar aquí o ser cargada, pero solo incluyo el contador para mantener el patrón.
+            
+            const cartCountElement = document.getElementById('cart-count');
+
+            function getCart() {
+                // Simulación: Asume que el carrito está almacenado en localStorage
+                const cart = localStorage.getItem('artesaniaCart');
+                return cart ? JSON.parse(cart) : [];
+            }
+
+            function updateCartCount() {
+                const cart = getCart();
+                // Suma la cantidad (quantity) de todos los ítems
+                const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                if (cartCountElement) {
+                    cartCountElement.textContent = totalItems;
+                }
+            }
+            
+            // Inicializar el contador al cargar la página
+            updateCartCount();
+        });
+    </script>
+    <script src="js/carrito.js"></script> 
+</body>
 </html>

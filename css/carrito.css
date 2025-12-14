@@ -157,36 +157,18 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .cart-table {
-        font-size: 0.9em;
+    /* Ocultar la columna de Precio en móviles */
+    .cart-table th:nth-child(2), /* Precio (Encabezado) */
+    .cart-table td:nth-child(2) { /* Precio (Datos) */
+        display: none; 
     }
-    .cart-table th, .cart-table td {
-        padding: 10px;
-    }
-    .cart-totals {
-        max-width: 100%;
-        margin-left: 0;
-    }
-}
-
-/* Dentro de css/carrito.css, añade o ajusta la Media Query: */
-
-@media (max-width: 768px) {
-    /* HIDE/REDUCE COLUMNS */
+    
     .cart-table {
         font-size: 0.85em;
     }
     .cart-table th, .cart-table td {
         padding: 10px;
     }
-    
-    /* Ocultar algunas columnas para reducir el desborde horizontal */
-    .cart-table th:nth-child(2), /* Precio */
-    .cart-table td:nth-child(2) {
-        display: none; 
-    }
-    
-    /* AJUSTAR EL RESUMEN */
     .cart-totals {
         max-width: 100%; /* Ocupar todo el ancho */
         margin-left: 0;
