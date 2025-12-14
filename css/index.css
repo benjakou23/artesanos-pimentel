@@ -1,0 +1,226 @@
+/* index.css - Estilos específicos de la página de inicio */
+
+/* --- Hero Slider / Carrusel --- */
+.hero-slider {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.slider-wrapper {
+    display: flex; /* Permite que los slides se muestren horizontalmente */
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho del contenedor */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0; /* Evita que el slide se encoja */
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: var(--white);
+}
+
+.overlay h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    font-weight: var(--font-bold);
+}
+
+.overlay p {
+    font-weight: var(--font-semi);
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* Controles del Slider */
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.slider-control:hover {
+    opacity: 1;
+}
+
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
+
+
+/* --- Feature Cards (Valores) --- */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    text-align: center;
+    gap: 30px;
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
+}
+.feature-card {
+    flex: 1;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Product Grid y Cards Modernas --- */
+.product-grid-section {
+    padding: 50px 0;
+}
+.product-grid-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: var(--primary-color);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.modern-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.modern-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.card-info {
+    padding: 15px;
+}
+.card-info h3 {
+    font-weight: var(--font-bold);
+}
+.card-info .price {
+    font-weight: var(--font-extra);
+}
+
+
+/* --- CTA Banner --- */
+.cta-banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+.cta-banner h2 {
+    font-weight: var(--font-bold);
+    margin-bottom: 15px;
+}
+.cta-banner p {
+    font-weight: var(--font-semi);
+    margin-bottom: 25px;
+}
+
+/* ======================================= */
+/* === AJUSTES RESPONSIVE PARA MÓVILES === */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    
+    /* --- HERO SLIDER --- */
+    .hero-slider {
+        height: 400px; /* Reducir altura en móviles */
+        margin-bottom: 15px;
+    }
+    .overlay {
+        padding: 0 5%;
+        text-align: center;
+    }
+    .overlay h1 {
+        font-size: 2em; /* Reducir mucho el título */
+    }
+    .overlay p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    /* Reducir tamaño de controles de navegación */
+    .slider-control {
+        padding: 10px 5px;
+        font-size: 1.2em;
+    }
+
+    /* --- FEATURE CARDS --- */
+    .features {
+        /* Clave: Forzar apilamiento de las 3 columnas */
+        flex-direction: column; 
+        padding: 40px 15px;
+        gap: 20px;
+    }
+    .feature-card {
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera al apilar */
+    }
+    .feature-card:hover {
+        transform: none; /* Desactivar animación de hover en táctil */
+    }
+
+    /* --- PRODUCT GRID --- */
+    .product-grid-section {
+        padding: 30px 0;
+    }
+    .product-grid-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .product-grid {
+        /* Permite que haya una sola columna si la pantalla es muy pequeña (menos de 280px) o dos. */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 20px;
+    }
+    .modern-card:hover {
+        transform: none; /* Desactivar animación de hover en táctil */
+    }
+    .modern-card img {
+        height: 200px; /* Altura más pequeña para imágenes de productos */
+    }
+
+    /* --- CTA BANNER --- */
+    .cta-banner {
+        padding: 40px 15px;
+        margin-top: 20px;
+    }
+    .cta-banner h2 {
+        font-size: 1.6em; /* Reducir título CTA */
+    }
+}

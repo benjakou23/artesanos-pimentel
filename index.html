@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pimentel Artesanal | Joyas de la Cultura Lambayecana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css"> 
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i> Pimentel Artesanal
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="tienda.html">Tienda</a>
+                <a href="artesanos.html">Artesanos</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" id="cart-link" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-slider">
+            <div class="slider-wrapper" id="slider-wrapper">
+                <div class="slide" style="background-image: url('https://larepublica.cronosmedia.glr.pe/original/2021/12/26/61c8cc5a4a631c49805d8b17.jpg');">
+                    <div class="overlay">
+                        <h1>Tejido de Totora: Herencia Viva de Pimentel</h1>
+                        <p>Descubre las creaciones únicas hechas por manos expertas.</p>
+                        <a href="tienda.html" class="btn btn-primary">Ver Catálogo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://semanarioexpresion.com/Presentacion/img/noticias/cl_regional//Muelle1323.jpg');">
+                    <div class="overlay">
+                        <h1>Cerámica Moche: Arte Milenario en Cada Pieza</h1>
+                        <p>Lleva un pedazo de historia precolombina a tu hogar.</p>
+                        <a href="cultura.html" class="btn btn-primary">Conoce su Origen <i class="fas fa-book-open"></i></a>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-control prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-control next"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <section class="features container">
+            <div class="feature-card">
+                <i class="fas fa-palette fa-3x"></i>
+                <h3>Patrimonio Cultural</h3>
+                <p>Cada pieza cuenta la historia y la tradición de Lambayeque.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-truck-fast fa-3x"></i>
+                <h3>Envío Seguro Regional</h3>
+                <p>Recibe tu artesanía en la región Lambayeque de forma rápida y confiable.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-handshake fa-3x"></i>
+                <h3>Comercio Justo</h3>
+                <p>Apoyo directo a los artesanos locales, sin intermediarios.</p>
+            </div>
+        </section>
+        
+        <section id="productos" class="container product-grid-section">
+            <h2>🛍️ Productos Destacados de la Semana</h2>
+            <div class="product-grid" id="product-list">
+                <div class="product-card modern-card" data-id="101" data-name="Barco Velero de Totora" data-price="45.00">
+                    <img src="https://elcomercio.pe/resizer/aoUovIS100Iaf9ehIzCNUbibmy0=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/BNGEVSGUPVHK3AGT7LKBOQKTUY.jpg" alt="Barco Velero de Totora">
+                    <div class="card-info">
+                        <h3>Barco Velero de Totora</h3>
+                        <p class="artisan"><i class="fas fa-user-tag"></i> Don Carlos</p>
+                        <p class="price">S/ 45.00</p>
+                        <button class="add-to-cart btn btn-secondary"><i class="fas fa-cart-plus"></i> Añadir</button>
+                    </div>
+                </div>
+
+                <div class="product-card modern-card" data-id="102" data-name="Manta Algodón Nativo" data-price="120.00">
+                    <img src="https://portal.andina.pe/EDPFotografia3/thumbnail/2019/08/30/000616576M.jpg" alt="Manta Algodón Nativo">
+                    <div class="card-info">
+                        <h3>Manta Algodón Nativo</h3>
+                        <p class="artisan"><i class="fas fa-user-tag"></i> Doña Rosa</p>
+                        <p class="price">S/ 120.00</p>
+                        <button class="add-to-cart btn btn-secondary"><i class="fas fa-cart-plus"></i> Añadir</button>
+                    </div>
+                </div>
+                
+                <div class="product-card modern-card" data-id="103" data-name="Réplica Cerámica Moche" data-price="85.00">
+                    <img src="https://experiencias.com.pe/public/image/dv1kj70wip9we8j9o8u9xntalex9/workshop-en-trujillo-ceramica-moche-y-vino-crianzada-dv1kj7.webp" alt="Réplica Cerámica Moche">
+                    <div class="card-info">
+                        <h3>Réplica Cerámica Moche</h3>
+                        <p class="artisan"><i class="fas fa-user-tag"></i> Taller Luna</p>
+                        <p class="price">S/ 85.00</p>
+                        <button class="add-to-cart btn btn-secondary"><i class="fas fa-cart-plus"></i> Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2>Conoce a Nuestros Maestros Artesanos</h2>
+                <p>Descubre las historias detrás de cada creación y el valor cultural que representan.</p>
+                <a href="artesanos.html" class="btn btn-tertiary">Ver Historias <i class="fas fa-users"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
+                <p>Pimentel, Lambayeque, Perú</p>
+                <p><i class="fas fa-envelope"></i> info@pimentelartesanal.pe</p>
+                <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-link"></i> Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="artesanos.html">Conoce a los Artesanos</a></li>
+                    <li><a href="cultura.html">Nuestra Cultura</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-file-alt"></i> Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4><i class="fas fa-share-alt"></i> Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 Pimentel Artesanal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script> <script src="js/index.js"></script> </body>
+</html>

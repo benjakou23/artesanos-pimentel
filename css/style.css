@@ -1,0 +1,400 @@
+/* Variables de Color (Usando tonos de tierra y mar de Pimentel) */
+:root {
+    --primary-color: #8B4513; /* Marrón Sepia/Tierra */
+    --secondary-color: #FFC300; /* Amarillo Sol/Arena */
+    --accent-color: #1E90FF; /* Azul Marino/Océano */
+    --text-color: #333;
+    --light-bg: #F9F9F9;
+    --white: #FFFFFF;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Base y Reset */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+h1, h2, h3 {
+    font-weight: 700;
+}
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Botones Modernos */
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #6d3511;
+}
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+.btn-secondary:hover {
+    background-color: #ffaa00;
+}
+.btn-tertiary {
+    background: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Header y Navegación */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+.main-nav a {
+    margin-left: 25px;
+    font-weight: 400;
+    color: var(--text-color);
+    position: relative;
+}
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+.cart-icon {
+    font-size: 1.1em;
+    color: var(--primary-color) !important;
+}
+
+/* Hero Slider (Simple Estilo Visual) */
+.hero-slider {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: var(--white);
+}
+.overlay h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Feature Cards (Valores) */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    text-align: center;
+    gap: 30px;
+}
+.feature-card {
+    flex: 1;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.feature-card i {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* Product Grid y Cards Modernas */
+.product-grid-section {
+    padding: 50px 0;
+}
+.product-grid-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: var(--primary-color);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.modern-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.modern-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.card-info {
+    padding: 15px;
+}
+.card-info h3 {
+    font-size: 1.4em;
+    margin: 0 0 5px 0;
+}
+.card-info .artisan {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.card-info .price {
+    font-size: 1.6em;
+    color: var(--accent-color);
+    font-weight: 900;
+    margin: 10px 0 15px 0;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+.cta-banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.cta-banner p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+.cta-banner .btn-tertiary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+}
+.cta-banner .btn-tertiary:hover {
+    background-color: var(--light-bg);
+}
+
+/* Footer (Simplificado) */
+.main-footer {
+    background-color: #333;
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+}
+/* ... Añadir más estilos para las páginas Artesanos, Cultura, Contacto ... */
+
+/* Variables de Color y Tipografía */
+:root {
+    --primary-color: #8B4513; /* Marrón Sepia/Tierra */
+    --secondary-color: #FFC300; /* Amarillo Sol/Arena */
+    --accent-color: #1E90FF; /* Azul Marino/Océano */
+    --text-color: #333;
+    --light-bg: #F9F9F9;
+    --white: #FFFFFF;
+    --font-family: 'Montserrat', sans-serif;
+    
+    /* Pesos de Montserrat */
+    --font-semi: 600; /* Semi-Negrita */
+    --font-bold: 700; /* Negrita */
+    --font-extra: 900; /* Extra-Negrita */
+}
+
+/* Base y Reset */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+h1, h2, h3, .logo {
+    font-family: var(--font-family);
+    font-weight: var(--font-bold); /* Títulos en Negrita */
+}
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Botones y Elementos Interactivos */
+.btn {
+    /* ... (Mantener estilos anteriores) ... */
+    font-weight: var(--font-semi); /* Texto de botón en Semi-Negrita */
+}
+
+/* Header (Asegurando la jerarquía tipográfica) */
+/* ... (Mantener estilos del header anterior) ... */
+.logo {
+    font-size: 1.8em;
+    font-weight: var(--font-extra); /* Logo más llamativo */
+    color: var(--primary-color);
+}
+.main-nav a {
+    font-weight: var(--font-semi); /* Links en Semi-Negrita */
+}
+
+/* Tarjetas de Producto Modernas */
+/* ... (Mantener estilos de product-card anterior) ... */
+.card-info h3 {
+    font-weight: var(--font-bold);
+}
+.card-info .price {
+    font-weight: var(--font-extra);
+}
+.add-to-cart i {
+    margin-right: 5px; /* Espacio para el ícono */
+}
+
+/* NUEVA SECCIÓN DE FOOTER (Diseño y Estructura) */
+.main-footer {
+    background-color: #333;
+    color: var(--white);
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    color: var(--secondary-color);
+    font-weight: var(--font-semi);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+/* Dentro de css/style.css, añade al final: */
+
+/* --- Media Query: Pantallas Pequeñas (ej. hasta 768px) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Añadir padding lateral para no pegar el contenido */
+    }
+
+    /* 1. HEADER Y NAVEGACIÓN */
+    .main-header .container {
+        flex-direction: column; /* Apilar logo y nav */
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .main-nav {
+        flex-direction: column; /* Los enlaces se apilan verticalmente */
+        text-align: center;
+        width: 100%;
+    }
+    .main-nav a {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* 2. BOTONES */
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+
+    /* 3. FOOTER */
+    .main-footer .footer-content {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-section h4 {
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 5px;
+        display: inline-block; /* Centrar el título */
+    }
+    .footer-section ul {
+        padding: 0;
+    }
+}

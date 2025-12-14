@@ -1,0 +1,181 @@
+/* contacto.css - Estilos específicos de la página de Contacto */
+
+/* --- Encabezado de Página (similar a otros) --- */
+.page-hero {
+    padding: 60px 0;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 40px;
+}
+.page-title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: var(--font-bold);
+}
+.page-title i {
+    margin-right: 15px;
+}
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: var(--font-semi);
+}
+.text-center {
+    text-align: center;
+}
+
+/* --- GRID Principal (Formulario y Detalles) --- */
+.contact-page {
+    padding-bottom: 60px;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Formulario más ancho que la info */
+    gap: 50px;
+}
+
+/* --- Formulario de Contacto --- */
+.contact-form-container {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.contact-form-container h2 {
+    color: var(--accent-color);
+    font-weight: var(--font-bold);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--font-semi);
+    color: #444;
+    font-size: 1.05em;
+}
+.form-group label i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding/borde en el ancho total */
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 15px 0;
+}
+.btn-submit i {
+    margin-left: 10px;
+}
+
+/* --- Información de Contacto (Columna 2) --- */
+.contact-info-container h2 {
+    color: var(--primary-color);
+    font-weight: var(--font-bold);
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.info-item i {
+    color: var(--accent-color);
+    margin-right: 20px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.info-item h3 {
+    font-size: 1.1em;
+    font-weight: var(--font-semi);
+    margin: 0 0 5px 0;
+}
+.info-item p {
+    margin: 0;
+    color: #666;
+}
+
+/* Mapa */
+.map-placeholder {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 40px;
+    }
+    .contact-form-container, .contact-info-container {
+        padding: 20px;
+    }
+}
+
+/* Dentro de css/contacto.css, debes revisar la Media Query existente: */
+
+@media (max-width: 900px) {
+    /* Clave: Forzar apilamiento */
+    .contact-grid {
+        grid-template-columns: 1fr; /* Pasa a una columna */
+        gap: 40px;
+    }
+    .contact-form-container, .contact-info-container {
+        padding: 20px;
+    }
+    .info-item {
+        flex-direction: column; /* Apilar ícono y texto */
+        text-align: center;
+    }
+    .info-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

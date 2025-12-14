@@ -1,0 +1,154 @@
+/* cultura.css - Estilos específicos de la página de Cultura */
+
+/* --- Colores de Base --- */
+:root {
+    --bg-light-cream: #fffaf0; /* Fondo más suave */
+}
+
+/* --- Encabezado de Página (similar a artesanos) --- */
+.page-hero {
+    padding: 60px 0;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 40px;
+}
+.page-title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: var(--font-bold);
+}
+.page-title i {
+    margin-right: 15px;
+}
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: var(--font-semi);
+}
+.text-center {
+    text-align: center;
+}
+
+/* --- Secciones de Tópicos Culturales (Texto + Imagen) --- */
+.cultural-topic {
+    padding: 60px 0;
+}
+
+.bg-light-section {
+    background-color: var(--bg-light-cream);
+}
+
+.topic-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.topic-content.reverse-topic {
+    flex-direction: row-reverse; /* Invertir orden de imagen y texto */
+}
+
+.topic-text {
+    flex: 1;
+    min-width: 50%;
+}
+
+.topic-image {
+    flex: 1;
+    min-width: 40%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topic-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.topic-image:hover img {
+    transform: scale(1.05);
+}
+
+.topic-text h2 {
+    font-size: 2.2em;
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+.topic-text h2 i {
+    margin-right: 10px;
+}
+.topic-text h3 {
+    font-weight: var(--font-semi);
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.intro-paragraph {
+    font-size: 1.15em;
+    font-weight: var(--font-semi);
+    margin-bottom: 20px;
+}
+
+/* --- Sección de Citas --- */
+.quote-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0;
+    margin-top: 40px;
+}
+.quote-section i {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.quote-section p {
+    font-size: 1.8em;
+    font-weight: var(--font-semi);
+    font-style: italic;
+    margin: 10px 0;
+}
+.quote-section span {
+    font-size: 1.1em;
+    display: block;
+    margin-top: 10px;
+    font-weight: var(--font-semi);
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 900px) {
+    .topic-content, .topic-content.reverse-topic {
+        flex-direction: column;
+        text-align: center;
+    }
+    .topic-image, .topic-text {
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Dentro de css/cultura.css, debes revisar la Media Query existente: */
+
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 2.2em;
+    }
+    
+    /* Clave: Forzar apilamiento */
+    .topic-content, .topic-content.reverse-topic {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .topic-image, .topic-text {
+        min-width: 100%;
+        width: 100%;
+    }
+    .quote-section p {
+        font-size: 1.5em;
+    }
+}

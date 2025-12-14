@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Pimentel Artesanal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css"> 
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i> Pimentel Artesanal
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="#productos">Tienda</a>
+                <a href="artesanos.html">Artesanos</a>
+                <a href="cultura.html">Cultura</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="carrito.html" id="cart-link" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-page">
+        <section class="page-hero text-center">
+            <h1 class="page-title">
+                <i class="fas fa-headset"></i> Hablemos de Tradición
+            </h1>
+            <p class="subtitle">Estamos listos para responder sus preguntas sobre nuestros productos, envíos o para conectar a nuevos artesanos.</p>
+        </section>
+
+        <section class="contact-grid">
+            
+            <div class="contact-form-container">
+                <h2>Envíanos un Mensaje</h2>
+                <form action="#" method="POST" class="contact-form">
+                    
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Nombre Completo</label>
+                        <input type="text" id="name" name="name" required placeholder="Ej: Anderson Giron">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Asunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Seleccione un Asunto</option>
+                            <option value="consulta">Consulta de Producto</option>
+                            <option value="envio">Pregunta sobre Envíos</option>
+                            <option value="artesano">Unirse como Artesano</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment-dots"></i> Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Escriba aquí su mensaje..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Enviar Mensaje <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="contact-info-container">
+                <h2>Detalles de Contacto</h2>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt fa-2x"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+51 987 654 321</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope fa-2x"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@pimentelartesanal.pe</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-location-dot fa-2x"></i>
+                    <div>
+                        <h3>Dirección</h3>
+                        <p>Playa de Pimentel, Lambayeque, Perú</p>
+                    </div>
+                </div>
+
+                <div class="map-placeholder">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15764.120516641571!2d-79.94829377488059!3d-6.84803964436577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904aef72c47a9721%3A0xc66519b7d341cc05!2sPimentel!5e0!3m2!1ses-419!2spe!4v1704283893000!5m2!1ses-419!2spe" 
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
+                <p>Pimentel, Lambayeque, Perú</p>
+                <p><i class="fas fa-envelope"></i> info@pimentelartesanal.pe</p>
+                <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-link"></i> Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="artesanos.html">Conoce a los Artesanos</a></li>
+                    <li><a href="cultura.html">Nuestra Cultura</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-file-alt"></i> Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4><i class="fas fa-share-alt"></i> Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 Pimentel Artesanal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Lógica para que el contador del carrito se actualice al cargar la página
+        if (typeof updateCartCount === 'function') {
+            updateCartCount();
+        }
+    </script>
+</body>
+</html>

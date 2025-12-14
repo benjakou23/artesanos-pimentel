@@ -1,0 +1,186 @@
+/* checkout.css - Estilos específicos de la página de Finalizar Compra */
+
+/* --- Títulos y Encabezado de la página --- */
+.checkout-page {
+    padding: 40px 0 80px 0;
+}
+.page-title {
+    font-size: 2.8em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: var(--font-bold);
+}
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: var(--font-semi);
+    margin-bottom: 40px;
+}
+.text-center {
+    text-align: center;
+}
+
+/* --- GRID PRINCIPAL (Formulario y Resumen) --- */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Formulario más grande que el resumen */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* --- Formulario de Datos --- */
+.checkout-form {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+.checkout-form h2 {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+.checkout-form h2 i {
+    margin-right: 10px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.checkout-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--font-semi);
+    color: #444;
+}
+.checkout-form input, 
+.checkout-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+.checkout-form input:focus, 
+.checkout-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Métodos de Pago Simulado */
+.payment-method-container {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.payment-option {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+.payment-option.active {
+    border-color: var(--secondary-color);
+    background-color: #fffaf0;
+}
+.payment-option label {
+    display: inline;
+    font-weight: var(--font-semi);
+    color: var(--text-color);
+}
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+.payment-note {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+    padding-left: 25px; /* Para alinear con el radio button */
+}
+
+/* Botón de Envío */
+.submit-btn {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 1.2em;
+    padding: 15px 0;
+    font-weight: var(--font-semi);
+}
+
+/* --- Resumen del Pedido --- */
+.payment-summary {
+    padding: 30px;
+    background-color: var(--bg-light-cream); /* Color crema */
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+}
+.payment-summary h2 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #ccc;
+}
+.summary-details {
+    margin-bottom: 20px;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    padding: 8px 0;
+}
+.summary-item.total-row {
+    font-size: 1.3em;
+    font-weight: var(--font-bold);
+    color: var(--accent-color);
+    border-top: 2px solid var(--accent-color);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.warning-note {
+    font-size: 0.9em;
+    color: #a04000; /* Tono de advertencia */
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.warning-note i {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .checkout-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 30px;
+    }
+    .payment-summary {
+        position: static;
+    }
+}
+
+/* Dentro de css/checkout.css, debes revisar la Media Query existente: */
+
+@media (max-width: 900px) {
+    .page-title {
+        font-size: 2.2em;
+    }
+    /* Clave: Forzar apilamiento */
+    .checkout-grid {
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 30px;
+    }
+    .payment-summary {
+        position: static; /* No se pega en móviles */
+    }
+}

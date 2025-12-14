@@ -1,0 +1,130 @@
+/* artesanos.css - Estilos específicos de la página de Artesanos */
+
+/* --- Encabezado de Página --- */
+.page-hero {
+    padding: 60px 0;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--secondary-color);
+    margin-bottom: 40px;
+}
+.page-title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: var(--font-bold);
+}
+.page-title i {
+    margin-right: 15px;
+}
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: var(--font-semi);
+}
+
+/* --- Grid de Perfiles de Artesanos (Historias) --- */
+.artisan-grid-section {
+    padding: 20px 0 60px 0;
+}
+
+.artisan-grid {
+    display: grid;
+    /* Usamos un grid para contener las tarjetas y dar estructura */
+    grid-template-columns: 1fr; 
+    gap: 60px; /* Separación vertical entre perfiles */
+}
+
+.artisan-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.artisan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    flex: 1; /* Ocupa el 50% */
+    min-width: 40%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    flex: 1; /* Ocupa el 50% */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-info h2 {
+    color: var(--accent-color);
+    font-size: 2em;
+    margin-top: 0;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+.card-info .specialty {
+    color: var(--primary-color);
+    font-weight: var(--font-semi);
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.card-info .specialty i {
+    margin-right: 10px;
+}
+
+.card-info .bio {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Diseño "Zig-Zag" o Invertido */
+.artisan-card.reverse-layout {
+    flex-direction: row-reverse; /* Cambia la posición de imagen/texto */
+}
+
+/* --- CTA Secundaria (Unirse a la Plataforma) --- */
+.secondary-cta {
+    margin-top: 0;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    padding: 50px 0;
+}
+.secondary-cta h2, .secondary-cta p {
+    color: var(--white);
+}
+.secondary-cta .btn-primary {
+    background-color: var(--white);
+    color: var(--accent-color);
+    border: 2px solid var(--white);
+}
+.secondary-cta .btn-primary:hover {
+    background-color: var(--light-bg);
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 900px) {
+    .artisan-card, .artisan-card.reverse-layout {
+        flex-direction: column; /* Apilar imagen y texto en móviles */
+    }
+    .card-image img {
+        height: 300px; /* Reducir altura de la imagen apilada */
+    }
+}
+
