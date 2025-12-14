@@ -1,12 +1,12 @@
-// Constantes y Elementos del DOM
-const cartCountElement = document.getElementById('cart-count');
-const productList = document.getElementById('product-list');
-const cartItemsBody = document.getElementById('cart-items-body');
-const cartSubtotalElement = document.getElementById('cart-subtotal');
-const cartTotalElement = document.getElementById('cart-total');
-const emptyCartMessage = document.getElementById('empty-cart-message');
-const proceedToCheckoutBtn = document.getElementById('proceed-to-checkout');
-const shippingCost = 15.00; // Costo de envío fijo para la simulación
+// Constantes y Elementos del DOM (Asegúrate de que 'cartCountElement' ya fue declarado arriba)
+// const cartCountElement = document.getElementById('cart-count'); // Ya debe estar declarado en el script global
+// const productList = document.getElementById('product-list'); // Ya debe estar declarado en el script global
+// const cartItemsBody = document.getElementById('cart-items-body'); // Ya debe estar declarado en el script global
+// const cartSubtotalElement = document.getElementById('cart-subtotal'); // Ya debe estar declarado en el script global
+// const cartTotalElement = document.getElementById('cart-total'); // Ya debe estar declarado en el script global
+// const emptyCartMessage = document.getElementById('empty-cart-message'); // Ya debe estar declarado en el script global
+// const proceedToCheckoutBtn = document.getElementById('proceed-to-checkout'); // Ya debe estar declarado en el script global
+// const shippingCost = 15.00; // Costo de envío fijo para la simulación
 
 // --- Funciones de Utilidad (Guardar/Obtener Carrito) ---
 
@@ -39,11 +39,13 @@ function addToCart(event) {
     if (!event.target.classList.contains('add-to-cart')) {
         return;
     }
+    
+    // Si el botón es un enlace, prevenimos el comportamiento por defecto
+    event.preventDefault();
 
     const card = event.target.closest('.product-card');
     const id = card.getAttribute('data-id');
     const name = card.getAttribute('data-name');
-    // Asegurarse de que el precio sea numérico
     const price = parseFloat(card.getAttribute('data-price')); 
 
     let cart = getCart();
@@ -52,7 +54,9 @@ function addToCart(event) {
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ id, name, price, quantity: 1 });
+        // Incluimos la imagen si está disponible (asumiendo que hay una imagen en la tarjeta)
+        const imageUrl = card.querySelector('img') ? card.querySelector('img').src : '';
+        cart.push({ id, name, price, quantity: 1, imageUrl: imageUrl }); 
     }
 
     saveCart(cart);
@@ -68,25 +72,29 @@ function calculateTotals(cart) {
 }
 
 function renderCart() {
+    if (!cartItemsBody) return; // Salir si no estamos en carrito.html
+    
     const cart = getCart();
     cartItemsBody.innerHTML = ''; // Limpiar la tabla
 
     if (cart.length === 0) {
-        // Mostrar mensaje de carrito vacío si no hay ítems
-        cartItemsBody.innerHTML = `<tr><td colspan="5" id="empty-cart-message">El carrito está vacío.</td></tr>`;
+        // Mostrar mensaje de carrito vacío (usando el colspan de 5 columnas)
+        cartItemsBody.innerHTML = `<tr><td colspan="5" class="text-center">El carrito está vacío.</td></tr>`;
         
         // Actualizar resumen a 0
         if (cartSubtotalElement) {
-             cartSubtotalElement.textContent = `S/ 0.00`;
-             cartTotalElement.textContent = `S/ 0.00`;
-             document.getElementById('cart-shipping').textContent = `S/ 0.00`;
-             if (proceedToCheckoutBtn) proceedToCheckoutBtn.style.display = 'none';
+            cartSubtotalElement.textContent = `S/ 0.00`;
+            cartTotalElement.textContent = `S/ 0.00`;
+            const cartShippingElement = document.getElementById('cart-shipping');
+            if (cartShippingElement) cartShippingElement.textContent = `S/ 0.00`;
+            if (proceedToCheckoutBtn) proceedToCheckoutBtn.style.display = 'none';
         }
         return;
     }
 
     if (proceedToCheckoutBtn) proceedToCheckoutBtn.style.display = 'inline-block';
-    document.getElementById('cart-shipping').textContent = `S/ ${shippingCost.toFixed(2)}`;
+    const cartShippingElement = document.getElementById('cart-shipping');
+    if (cartShippingElement) cartShippingElement.textContent = `S/ ${shippingCost.toFixed(2)}`;
 
     // 1. Renderizar Ítems
     cart.forEach(item => {
@@ -94,18 +102,18 @@ function renderCart() {
         const subtotal = item.price * item.quantity;
         
         row.innerHTML = `
-            <td>${item.name}</td>
-            <td>S/ ${item.price.toFixed(2)}</td>
-            <td class="quantity-controls">
+            <td data-label="Producto">${item.name}</td>
+            <td data-label="Precio">S/ ${item.price.toFixed(2)}</td>
+            <td data-label="Cantidad" class="quantity-controls">
                 <input type="number" 
-                       value="${item.quantity}" 
-                       min="1" 
-                       data-id="${item.id}"
-                       class="item-quantity">
+                        value="${item.quantity}" 
+                        min="1" 
+                        data-id="${item.id}"
+                        class="item-quantity">
             </td>
-            <td>S/ ${subtotal.toFixed(2)}</td>
-            <td>
-                <button class="remove-btn" data-id="${item.id}">Eliminar</button>
+            <td data-label="Subtotal">S/ ${subtotal.toFixed(2)}</td>
+            <td data-label="Acción">
+                <button class="remove-btn btn-delete" data-id="${item.id}"><i class="fas fa-trash"></i></button>
             </td>
         `;
         cartItemsBody.appendChild(row);
@@ -130,7 +138,7 @@ function updateQuantity(event) {
 
     const input = event.target;
     const id = input.getAttribute('data-id');
-    // Obtener el nuevo valor y asegurar que sea un entero positivo
+    // Obtener el nuevo valor y asegurar que sea un entero positivo (min="1" ya lo hace HTML, pero JS previene errores)
     const newQuantity = Math.max(1, parseInt(input.value, 10)); 
     
     let cart = getCart();
@@ -145,11 +153,13 @@ function updateQuantity(event) {
 
 // Maneja la eliminación de ítem
 function removeItem(event) {
-    if (!event.target.classList.contains('remove-btn')) {
+    // Buscamos el botón .remove-btn para obtener el data-id, incluso si se hizo clic en el <i>
+    const removeButton = event.target.closest('.remove-btn');
+    if (!removeButton) {
         return;
     }
 
-    const id = event.target.getAttribute('data-id');
+    const id = removeButton.getAttribute('data-id');
     let cart = getCart();
     
     // Filtramos para crear un nuevo array sin el ítem a eliminar
@@ -159,7 +169,7 @@ function removeItem(event) {
 }
 
 // ---------------------------------------------
-// INICIALIZACIÓN
+// INICIALIZACIÓN (Debe estar dentro de document.addEventListener('DOMContentLoaded', ...))
 // ---------------------------------------------
 
 // Asignar listeners en la página del catálogo
@@ -174,5 +184,5 @@ if (cartItemsBody) {
     cartItemsBody.addEventListener('click', removeItem); // Para el botón de eliminar
 }
 
-// Asegurarse de que el contador se muestre correctamente en ambas páginas
+// Asegurarse de que el contador se muestre correctamente en todas las páginas
 updateCartCount();
